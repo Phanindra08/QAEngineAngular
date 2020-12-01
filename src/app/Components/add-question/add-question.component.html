@@ -1,0 +1,16 @@
+<app-header></app-header>
+<div class="questionBodyDesigning">
+<h2 class="questionHeadDesign">Curious? Just Ask!</h2>
+<form [formGroup]="questionsForm">
+
+  <!-- Adding a question -->
+  <div class="form-group">
+    <label for="anyQuestions">* Any Questions???</label> <br /> <br />
+    <textarea rows="5" class="question-form-control"
+    id="anyQuestions" formControlName="questionnaire" placeholder="What,When,Why...ask" [(ngModel)]="question.questionnaire"></textarea>
+    <br /> <br />
+  </div>
+  <button (click)="addQuestion()" class="questionButtonDesign">Add Question</button> <br /> <br />
+  <button (click)="goBack()" class="questionButtonDesign">Go Back</button> <br /> <br />
+</form>
+</div>

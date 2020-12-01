@@ -1,0 +1,19 @@
+<app-header></app-header>
+<div class="questionBodyDesigning">
+<h2 class="questionHeadDesign">Revise Your Question</h2>
+<form [formGroup]="questionsForm">
+
+  <!-- Editing My question -->
+  <div class="form-group">
+    <input name="id" formControlName="id" type="hidden" [(ngModel)]="question.id" />
+    <label for="changeQuestion">* Want a Change???</label> <br /> <br />
+    <textarea rows="5" class="question-form-control"
+    id="changeQuestion" formControlName="questionnaire" placeholder="What,When,Why...ask" [(ngModel)]="question.questionnaire"></textarea>
+    <br /> <br />
+  </div>
+
+  <button (click)="questionUpdate()" class="questionButtonDesign">Update Question</button> <br /> <br />
+  <button (click)="goBack()" class="questionButtonDesign">Go Back</button> <br /> <br />
+
+</form> <br />
+</div>

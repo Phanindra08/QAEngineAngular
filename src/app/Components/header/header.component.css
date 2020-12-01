@@ -1,0 +1,73 @@
+nav {
+	margin:-18px;
+	padding: 0;
+	background-color: #A35D6A;
+}
+
+#logo {
+	padding: 0 25px;
+	float: left;
+	font-size:30px;
+	line-height: 60px;
+  color: #A8DF65;
+  font-family:Lobster;
+}
+
+nav:after {
+	content:"";
+	display:block;
+	clear:both;
+}
+
+nav ul {
+	padding:5px;
+	font-family:Patua One;
+	list-style: none;
+}
+
+.li-position{
+	float: left;
+}
+
+
+nav a {
+	display:block;
+	padding:14px 20px;
+	font-size:17px;
+	text-decoration:none;
+	color:#E8EAD3;
+}
+
+nav ul ul li{
+	background-color: #1B6C8A;
+}
+
+nav ul ul {
+	display: none;
+	position: absolute;
+	/* has to be the same number as the "line-height" of "nav a" */
+	top: 47px;
+}
+
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+	display:inherit;
+}
+
+nav ul ul li {
+	width:170px;
+	float:none;
+}
+
+nav ul a:hover{
+	background-color: #519872;
+}
+
+.li-menu-position{
+	float:right;
+	padding-right:50px;
+}
+
+/* Change ' +' in order to change the Dropdown symbol */
+li > a:after { content:  ' +'; }
+li > a:only-child:after { content: ''; }

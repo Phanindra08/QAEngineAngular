@@ -1,0 +1,174 @@
+container{
+	height:100%;
+}
+
+/*.bodyBackground{
+	background-image:url("../images/background_image.jpg");
+	background-repeat: no-repeat;
+	background-size:cover;
+}*/
+
+.error{
+	color:red;
+	font-size: 40px;
+}
+
+h1{
+	font-family:Bebas Neue;
+	color:#FFEFA0;
+	margin-left: 640px;
+}
+
+.form-group{
+	font-family:Acme;
+	font-weight:lighter;
+	color:#1D2D50;
+	text-align:center;
+	/* margin-left:-15px; */
+}
+
+.form-control{
+	width: 20%;
+	height:34px;
+	padding:6px 12px;
+	font-size:15px;
+	background-color:#DBCBBD;
+	border:1px solid;
+	border-radius:20px;
+	/* margin-left:100px; */
+
+}
+
+.button {
+  border-radius: 10px;
+  background-color: #FFC93C;
+  border: none;
+  color: #290001;
+  text-align: center;
+  font-size: 28px;
+  padding: 10px 1px;
+  width: 150px;
+  cursor: pointer;
+  margin-left: 630px;
+  font-family:Bangers;
+}
+
+.buttonCA{
+	width: 250px;
+	margin-left: 630px;
+
+}
+
+.button:hover{
+	background-color: #F8BD7F;
+}
+
+.linkStyling{
+	background-color:#DECDC3;
+	color:#206A5D;
+	font-family:Pacifico;
+	text-decoration:none;
+	font-size:25px;
+	border:2px solid;
+	padding:3px 5px;
+	border-radius:10px;
+	margin-left: 610px;
+}
+
+.linkforLoginPage{
+	float:right;
+	margin-left: 450px;
+}
+
+.form-group-email
+{
+	margin-left:500px;
+	width: 100%;
+}
+.form-group-username
+{
+	margin-left:470px;
+	width: 100%;
+}
+.form-group-phonenumber
+{
+	margin-left:440px;
+	width: 100%;
+}
+.form-group-password
+{
+	margin-left:475px;
+	width: 100%;
+}
+.form-group-repassword
+{
+	margin-left:420px;
+	width: 100%;
+}
+.CAbuttonDesign
+{
+	border-radius: 10px;
+  background-color: #FFC93C;
+  border: none;
+  color: #290001;
+  text-align: center;
+  font-size: 28px;
+  padding: 10px 1px;
+  width: 210px;
+  cursor: pointer;
+  margin-left: 620px;
+  font-family:Bangers;
+}
+.headStyling
+{
+	font-family:Bebas Neue;
+	color:#FFEFA0;
+	margin-left: 610px;
+}
+.form-group-oldpassword
+{
+	margin-left:445px;
+	width: 100%;
+}
+.form-group-newpassword
+{
+	margin-left:435px;
+	width: 100%;
+}
+.updateHeaderStyling
+{
+	font-family:Bebas Neue;
+	color:#FFEFA0;
+	margin-left: 610px;
+}
+.alertMsg
+{
+	color:#FF0000;
+	margin-left:450px;
+}
+.signInalertMsg
+{
+	color:#FF0000;
+	margin-left:590px;
+}
+
+.passwordAlertMsg
+{
+	color:#FF0000;
+	margin-left:150px;
+}
+.emailAlertMsg
+{
+	color:#FF0000;
+	margin-left:150px;
+}
+.usernameAlertMsg
+{
+	color:#FF0000;
+	margin-left:150px;
+}
+.passwordValidationStyling
+{
+	/* color:#FF0000; */
+	margin-left:100px;
+}

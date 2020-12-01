@@ -1,0 +1,28 @@
+<app-header></app-header>
+<div class="answerBodyDesigning">
+<div *ngIf="error" class="error">{{error}}</div><br />
+<h2 class="question-as-heading">{{question.questionnaire}}</h2>
+<div class="messagetoDisplay" *ngIf="answers.length==0">
+  This question is not answered by any user
+</div>
+<br />
+
+<div *ngFor="let answer of answers">
+  <form>
+    <div class="answer-enclosing-box">
+      <div class="displaying-username">{{answer.username}}</div>
+      <hr class="answer-box-division" />
+      <div class="answertoDisplay">{{answer.answeringQuestion}}</div><br />
+      <label for="rating" class="ratingInfoStyling">Give rating for the answer:</label> &nbsp;
+      <select id="rating" name="rating" [(ngModel)]="answer.rating" class="dropdownStyling">
+        <option value="Not yet rated">Not yet rated</option>
+        <option value="Irrelevant Answer">Irrelevant Answer</option>
+        <option value="Partially Clear">Partially Clear</option>
+        <option value="Best Answer">Best Answer</option>
+      </select>&nbsp;
+    <button type="submit" (click)="savingRating(answer)" class="ratingButtonStyling">Save Rating</button>
+  </div><br />
+</form>
+</div>
+<button (click)="goBack()" class="linkStylingforAnswer">Go Back</button> <br /> <br />
+</div>

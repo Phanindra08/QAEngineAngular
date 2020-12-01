@@ -1,0 +1,20 @@
+<app-header></app-header>
+<div class="answerBodyDesigning">
+<h2 class="question-as-heading">View All Your Answers</h2>
+<div *ngIf="error" class="error">{{error}}</div><br />
+<div class="unasweredTextStyling" *ngIf="answers.length==0">
+  You haven't answered any questions yet
+</div>
+<div *ngFor="let answer of answers">
+  <div class="answer-enclosing-box">
+    <div class="question-answered">{{answer.questionDTO.questionnaire}}</div>
+    <hr class="answer-box-division" />
+    <div class="answertoDisplay">{{answer.answeringQuestion}}</div><br /><br />
+    <div>{{answer.rating}}</div><br />
+    <div class="answerAlignmentforLink">
+      <button (click)="updateAnswer(answer.questionDTO.id)" class="answerButtonDesign">Edit</button> &nbsp;
+      <button (click)="deleteAnswer(answer.id)" class="answerButtonDesign">Delete</button>
+    </div>
+  </div><br />
+</div>
+</div>

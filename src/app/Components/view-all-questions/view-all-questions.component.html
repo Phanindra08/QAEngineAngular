@@ -1,0 +1,15 @@
+<app-header></app-header>
+<div class="questionBodyDesigning">
+<h2 class="questionHeadDesign">Outlook All Queries</h2>
+<div *ngIf="error"  class="error">{{error}}</div><br />
+<div class="messagetoDisplay" *ngIf="questions.length==0">
+  There are no questions added by any other user to display.
+</div>
+<div *ngFor="let question of questions">
+  <a [routerLink]="['/view-answers', question.id]" class="linkStylingforBox">
+    <div class="question-enclosing-box">
+      <div class="question-content">{{question.questionnaire}}</div>
+    </div>
+  </a> <br />
+</div>
+</div>

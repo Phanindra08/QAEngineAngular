@@ -1,0 +1,35 @@
+
+.questionBodyDesigning {
+	text-align: center;
+	}
+
+
+.question-content{
+	color:#590995;
+	font-size:35px;
+	font-family:Oswald;
+}
+
+
+.question-button-styling{
+	background-color:#0F3057;
+	color:#E8FFC1;
+	font-family:Bebas Neue;
+	font-size:18px;
+	border:2px solid;
+	padding:7px 10px;
+	border-radius:20px;
+	margin:5px;
+	text-decoration:none;
+}
+
+
+
+.messagetoDisplay{
+
+	color:#C75643;
+	text-align:center;
+	font-size:50px;
+	font-family:Oswald;
+
+}

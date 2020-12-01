@@ -1,0 +1,27 @@
+.bodyDesigning {
+	text-align: center;
+	}
+
+  .linkStyling{
+  	background-color:#DECDC3;
+  	color:#206A5D;
+  	font-family:Pacifico;
+  	text-decoration:none;
+  	font-size:25px;
+  	border:2px solid;
+  	padding:3px 5px;
+  	border-radius:10px;
+  }
+
+.question-content{
+	color:#590995;
+	font-size:35px;
+	font-family:Oswald;
+}
+
+.messagetoDisplay{
+	color:#C75643;
+	text-align:center;
+	font-size:50px;
+	font-family:Oswald;
+}

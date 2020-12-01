@@ -1,0 +1,18 @@
+<app-header></app-header>
+<div class="questionBodyDesigning">
+<h2 class="questionHeadDesign">Outlook Your Queries</h2>
+<div *ngIf="error" class="error">{{error}}</div><br />
+<div class="messagetoDisplay" *ngIf="questions.length==0">
+  There are no questions added by you to display.
+</div>
+<div *ngFor="let question of questions">
+  <div class="question-enclosing-box">
+    <a [routerLink]="['/view-my-question-answers', question.id]" class="linkStylingforBox">
+      <div class="question-content">{{question.questionnaire}}</div></a>  <br />
+      <div>
+        <button (click)="updateQuestion(question.id)" class="questionButtonDesign">Update</button> &nbsp;
+        <button (click)="deleteQuestion(question.id)" class="questionButtonDesign">Delete</button>
+      </div>
+    </div> <br />
+  </div>
+</div>
