@@ -1,91 +1,116 @@
+<div *ngIf="!isLoggedin">
   <a routerLink="/login" class="linkStyling linkforLoginPage">Back to Login Page</a>
   <h1 class="headStyling">Create New Account</h1>
-  <!-- Creating User Account -->
-  <form [formGroup]="createAccountForm" (ngSubmit)="onSubmit()" >
+</div>
+<div *ngIf="isLoggedin">
+  <app-header></app-header> <br />
+  <h1 class="headStyling">Update Account</h1>
+</div>
 
-    <!-- FirstName -->
-    <div class="form-group">
-      <label for="firstName">* First Name:</label> &nbsp; <input
-      type="text" id="firstName" formControlName="firstName" [(ngModel)]="user.firstName" [ngClass]="{ 'is-invalid': submitted && createAccountFormControl.firstName.errors }" /> <br /> <br />
-      <div *ngIf="submitted && createAccountFormControl.firstName.errors">
-        <div *ngIf="createAccountFormControl.firstName.errors.required">First Name is required</div>
-        <div *ngIf="createAccountFormControl.firstName.errors?.invalidName">First Name is invalid</div>
-      </div>
+<div *ngIf="error" class="error">{{error}}</div><br />
+
+<!-- Creating User Account -->
+<form [formGroup]="createAccountForm">
+
+  <!-- FirstName -->
+  <div class="form-group form-group-name">
+    <label for="firstName">* First Name:</label> &nbsp; <input
+    type="text" id="firstName" class="form-control" formControlName="firstName" [(ngModel)]="user.firstName" [ngClass]="{ 'is-invalid': submitted && createAccountFormControl.firstName.errors }" /> <br /> <br />
+    <div *ngIf="(createAccountFormControl.firstName.touched || submitted) && createAccountFormControl.firstName.errors?.required" >
+      First Name is required
     </div>
+    <div *ngIf="!createAccountFormControl.firstName.errors?.required && createAccountFormControl.firstName.touched && createAccountFormControl.firstName.errors?.invalidName" >
+      Invalid First Name
+   </div>
+  </div>
 
-    <!--LastName -->
-    <div class="form-group">
-      <label for="lastName">* Last Name:</label> &nbsp; <input
-      type="text" id="lastName" formControlName="lastName" [(ngModel)]="user.lastName" [ngClass]="{ 'is-invalid': submitted && createAccountFormControl.lastName.errors }" /> <br /> <br />
-      <div *ngIf="submitted && createAccountFormControl.lastName.errors">
-        <div *ngIf="createAccountFormControl.lastName.errors.required">Last Name is required</div>
-        <div *ngIf="createAccountFormControl.lastName.errors?.invalidName">Last Name is invalid</div>
-      </div>
+  <!--LastName -->
+  <div class="form-group form-group-name">
+    <label for="lastName">* Last Name:</label> &nbsp; <input
+    type="text" class="form-control" id="lastName" formControlName="lastName" [(ngModel)]="user.lastName" [ngClass]="{ 'is-invalid': submitted && createAccountFormControl.lastName.errors }" /> <br /> <br />
+    <div *ngIf="(createAccountFormControl.lastName.touched || submitted) && createAccountFormControl.lastName.errors?.required" >
+      Last Name is required
     </div>
+    <div *ngIf="!createAccountFormControl.lastName.errors?.required && createAccountFormControl.lastName.touched && createAccountFormControl.lastName.errors?.invalidName" >
+      Invalid Last Name
+   </div>
+  </div>
 
-    <!-- Username -->
-  <div class="form-group-username">
+  <!-- Username -->
+  <div class="form-group form-group-username">
     <label for="username">* Username:</label> &nbsp; <input
-    type="text" id="username" formControlName="username" [(ngModel)]="user.username" /> <br /> <br />
+    type="text" class="form-control" id="username" formControlName="username" [(ngModel)]="user.username" /> <br /> <br />
     <div *ngIf="(createAccountFormControl.username.touched || submitted) && createAccountFormControl.username.errors?.required" >
-        Username is required
+      Username is required
     </div>
     <div *ngIf="!createAccountFormControl.username.errors?.required && createAccountFormControl.username.touched && createAccountFormControl.username.errors?.invalidUsername" >
-        Username must be of length between 7 to 13 and must contain only alphabets, numbers and '_'.
-    </div>
+      Username must be of length between 7 to 13 and must contain only alphabets, numbers and '_'
+   </div>
+    <div *ngIf="isUsernameExists" class="usernameAlertMsg">Username Exists</div><br />
   </div>
 
   <!-- Email -->
-  <div class="form-group-email">
+  <div class="form-group form-group-email">
     <label for="email">* Email:</label> &nbsp; <input
-    type="text" id="email" formControlName="email" [(ngModel)]="user.email" /> <br /> <br />
+    type="text" id="email" class="form-control" formControlName="email" [(ngModel)]="user.email" /> <br /> <br />
     <div *ngIf="(createAccountFormControl.email.touched || submitted) && createAccountFormControl.email.errors?.required" >
-        Email is required
+      Email is required
     </div>
     <div *ngIf="!createAccountFormControl.email.errors?.required && createAccountFormControl.email.touched && createAccountFormControl.email.errors?.invalidEmailAddress" >
-        Enter a valid email address.
-    </div>
+      Enter a valid email address.
+   </div>
+    <div *ngIf="isEmailExists" class="emailAlertMsg">Email Exists</div><br />
   </div>
 
   <!-- Phone Number -->
-  <div class="form-group-phonenumber">
+  <div class="form-group form-group-phonenumber">
     <label for="phoneNumber">* Phone Number:</label> &nbsp; <input
-    type="text" id="phoneNumber" formControlName="phoneNumber" [(ngModel)]="user.phoneNumber" /> <br /> <br />
+    type="text" id="phoneNumber" class="form-control" formControlName="phoneNumber" [(ngModel)]="user.phoneNumber" /> <br /> <br />
     <div *ngIf="(createAccountFormControl.phoneNumber.touched || submitted) && createAccountFormControl.phoneNumber.errors?.required" >
-        Phone Number is required
+      Phone Number is required
     </div>
     <div *ngIf="!createAccountFormControl.phoneNumber.errors?.required && createAccountFormControl.phoneNumber.touched && createAccountFormControl.phoneNumber.errors?.invalidPhoneNumber" >
-        Enter a valid phone number.
-    </div>
+      Invalid Phone Number
+   </div>
+  </div>
+
+  <!-- Old Password -->
+  <div *ngIf="isLoggedin">
+    <div class="form-group form-group-oldpassword">
+      <label for="oldPassword">* Old Password:</label> &nbsp; <input
+      type="password" id="oldPassword" class="form-control" formControlName="oldPassword"
+      [(ngModel)]="user.oldPassword" /> <br /> <br />
+      <div *ngIf="(createAccountFormControl.oldPassword.touched || submitted) && createAccountFormControl.oldPassword.errors?.required" >
+        Password is required
+      </div>
+      <div *ngIf="oldPasswordMatches" class="alertMsg">Old Password Doesn't match</div><br />
+    </div> <br />
   </div>
 
   <!-- Password -->
-  <div class="form-group-password">
+  <div class="form-group form-group-password">
     <label for="password">* Password:</label> &nbsp; <input
-    type="password" id="password" formControlName="password" [(ngModel)]="user.password" /> <br /> <br />
+    type="password" id="password" class="form-control" formControlName="password" [(ngModel)]="user.password" /> <br /> <br />
     <div *ngIf="(createAccountFormControl.password.touched || submitted) && createAccountFormControl.password.errors?.required" >
-        Password is required
+      Password is required
     </div>
     <div *ngIf="!createAccountFormControl.password.errors?.required && createAccountFormControl.password.touched" >
       {{createAccountFormControl.password.errors?.strength}}
     </div>
   </div> <br />
 
+  <!--Confirm Password-->
+  <div class="form-group-repassword">
+    <label for="confirmPassword">*Re-Enter Password:</label> &nbsp; <input
+    type="password" id="confirmPassword" formControlName="confirmPassword" /> <br /> <br />
+    <div *ngIf="(createAccountFormControl.confirmPassword.touched || submitted) && createAccountFormControl.confirmPassword.errors?.required" >
+      Confirm Password is required
+    </div>
+    <div *ngIf="!createAccountFormControl.confirmPassword.errors?.required && createAccountFormControl.confirmPassword.touched && createAccountFormControl.password.errors?.passwordMismatch">
+      Confirm Password should match with Password
+    </div>
+  </div> <br /> <br />
 
-
-    <!--Confirm Password-->
-    <div class="form-group-repassword">
-      <label for="confirmPassword">*Re-Enter Password:</label> &nbsp; <input
-      type="password" id="confirmPassword" formControlName="confirmPassword" /> <br /> <br />
-      <div *ngIf="(createAccountFormControl.confirmPassword.touched || submitted) && createAccountFormControl.confirmPassword.errors?.required" >
-					Confirm Password is required
-			</div>
-      <div *ngIf="!createAccountFormControl.confirmPassword.errors?.required && createAccountFormControl.confirmPassword.touched && createAccountFormControl.password.errors?.passwordMismatch">
-        Passwords should match
-			</div>
-    </div> <br /> <br />
-
-    <input type="submit" value="Create New Account"
-    class="CAbuttonDesign" />
-
-  </form>
+  <button *ngIf="!isLoggedin" (click)="onSubmit()" class="CAbuttonDesign" >Create Account</button>
+  <button *ngIf="isLoggedin" (click)="onSave()" class="CAbuttonDesign" >Save</button>
+</form>

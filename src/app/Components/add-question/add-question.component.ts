@@ -4,8 +4,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import {Questions} from '../../model/questions.model';
-import {AuthorizationService} from '../../service/authorization.service';
 import {QuestionService} from '../../service/question.service';
+import {TokenStorageService} from '../../service/token-storage.service';
 
 @Component({
   selector: 'app-add-question',
@@ -19,16 +19,15 @@ export class AddQuestionComponent implements OnInit {
   public questionsForm: FormGroup;
 
   constructor(private location: Location, private elementRef: ElementRef,
-              private formBuilder: FormBuilder, private router: Router
-              private authorizationService: AuthorizationService,
+              private formBuilder: FormBuilder, private router: Router,
+              private tokenStorageService: TokenStorageService,
               private questionService: QuestionService) {
     this.question = new Questions();
     this.isLoggedin = false;
   }
 
   public ngOnInit(): void {
-    this.isLoggedin = this.authorizationService.isUserLoggedin();
-
+    this.isLoggedin = this.tokenStorageService.isTokenGenerated();
     if (!this.isLoggedin) {
       this.router.navigate(['/login']);
     }
@@ -42,7 +41,6 @@ export class AddQuestionComponent implements OnInit {
 
   public addQuestion(): void {
     if (this.questionsForm.valid) {
-      this.question.username = this.authorizationService.getLoggedinUser();
       this.questionService.addQuestion(this.question)
         .subscribe((data) => {
           alert('Question added Successfully.');

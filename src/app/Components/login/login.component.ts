@@ -1,47 +1,55 @@
-import { Component, OnInit ,ElementRef } from '@angular/core';
-import { FormBuilder,FormGroup, Validators } from '@angular/forms';
+import { Component, ElementRef, OnInit  } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import {AuthorizationService} from '../../service/authorization.service';
+import {TokenStorageService} from '../../service/token-storage.service';
+import {UserService} from '../../service/user.service';
 
 @Component({
   selector: 'app-login',
+  styleUrls: ['./login.component.css'],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
 
-  public loginForm:FormGroup;
+  public loginForm: FormGroup;
+  public isLoggedIn: boolean;
   public error: string;
+  constructor(private formBuilder: FormBuilder, private userService: UserService,
+              private router: Router, private elementRef: ElementRef,
+              private tokenStorage: TokenStorageService,
+            ) { }
 
-  constructor(private formBuilder:FormBuilder,private authorizationService:AuthorizationService,
-    private router: Router,private elementRef:ElementRef) { }
-
-  ngOnInit(): void {
-    this.loginForm=this.formBuilder.group({
-      username:['', [Validators.required]],
-      password:['', [Validators.required]]
+  public ngOnInit(): void {
+    this.loginForm = this.formBuilder.group({
+      password: ['', [Validators.required]],
+      username: ['', [Validators.required]],
     });
-    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor="#61B15A";
+
+    if (this.tokenStorage.getToken()) {
+      this.isLoggedIn = true;
+    }
+
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#61B15A';
   }
 
-  public userAuthentication():void{
-    this.authorizationService.authenticate(this.loginForm.controls.username.value, this.loginForm.controls.password.value).subscribe(
-      (success)=>
-      {
-        this.authorizationService.registerInSession(this.loginForm.controls.username.value);
-        if (success == "FAILURE") {
-          this.error = 'Invalid Credentials';
-          return;
-        }
+  public userAuthentication(): void {
+      this.userService.authenticate(this.loginForm.controls.username.value, this.loginForm.controls.password.value).
+      subscribe(
+      (data) => {
+        const dataToObject = JSON.parse(data);
+        this.tokenStorage.saveToken(dataToObject.jwtToken);
+        this.tokenStorage.saveUser(dataToObject);
+
+        this.isLoggedIn = true;
         this.router.navigate(['/view-all-questions']);
       },
       (error) => {
-        this.error = 'Either invalid credentials or something went wrong';
-      });
+        alert('Either invalid credentials or something went wrong');
+      } );
     }
 
-    public goToCreateAccount():void{
+    public goToCreateAccount(): void {
       this.router.navigate(['/create-account']);
     }
   }

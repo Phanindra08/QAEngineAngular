@@ -1,73 +1,128 @@
-container{
-	height:100%;
-}
-
-/*.bodyBackground{
-	background-image:url("../images/background_image.jpg");
-	background-repeat: no-repeat;
-	background-size:cover;
-}*/
-
-h1{
-	font-family:Bebas Neue;
-	color:#FFEFA0;
-	margin-left: 640px;
-}
-
-.form-group{
-	font-family:Acme;
-	font-weight:lighter;
-	color:#1D2D50;
-	text-align:center;
-	/* margin-left:-15px; */
-}
-
-.form-control{
-	width: 20%;
-	height:34px;
-	padding:6px 12px;
-	font-size:15px;
-	background-color:#DBCBBD;
-	border:1px solid;
-	border-radius:20px;
-	/* margin-left:100px; */
-
+.alertMsg{
+	color:#FF0000;
+	margin-left:180px;
 }
 
 .button {
-  border-radius: 10px;
-  background-color: #FFC93C;
+	background-color: #FFC93C;
   border: none;
+  border-radius: 10px;
   color: #290001;
-  text-align: center;
+	cursor: pointer;
+	font-family:Bangers;
   font-size: 28px;
-  padding: 10px 1px;
-  width: 150px;
-  cursor: pointer;
-  margin-left: 630px;
-  font-family:Bangers;
-}
-
-.buttonCA{
-	width: 250px;
 	margin-left: 630px;
-
+  padding: 10px 1px;
+	text-align: center;
+  width: 150px;
 }
 
 .button:hover{
 	background-color: #F8BD7F;
 }
 
+.CAbuttonDesign{
+	background-color: #FFC93C;
+	border: none;
+	border-radius: 10px;
+  color: #290001;
+	cursor: pointer;
+	font-family:Bangers;
+  font-size: 28px;
+	margin-left: 620px;
+  padding: 10px 1px;
+	text-align: center;
+  width: 210px;
+}
+
+.emailAlertMsg{
+	color:#FF0000;
+	font-size:25px;
+	margin-left:150px;
+}
+
+.error{
+	color:red;
+	font-size: 40px;
+}
+
+.form-control{
+	background-color:#DBCBBD;
+	border:1px solid;
+	border-radius:20px;
+	font-size:15px;
+	height:34px;
+	padding:6px 12px;
+	width: 20%;
+}
+
+.form-group{
+	color:#1D2D50;
+	font-family:Acme;
+	font-weight:lighter;
+}
+
+.form-group-name{
+	text-align:center;
+}
+
+.form-group-email{
+	margin-left:500px;
+	width: 100%;
+}
+
+.form-group-oldpassword{
+	margin-left:445px;
+	width: 100%;
+}
+
+.form-group-newpassword{
+	margin-left:435px;
+	width: 100%;
+}
+
+.form-group-username{
+	margin-left:470px;
+	width: 100%;
+}
+
+.form-group-phonenumber{
+	margin-left:440px;
+	width: 100%;
+}
+
+.form-group-password{
+	margin-left:475px;
+	width: 100%;
+}
+
+.form-group-repassword{
+	margin-left:420px;
+	width: 100%;
+}
+
+h1{
+	color:#FFEFA0;
+	font-family:Bebas Neue;
+	margin-left: 640px;
+}
+
+.headStyling{
+	color:#FFEFA0;
+	font-family:Bebas Neue;
+	margin-left: 610px;
+}
+
 .linkStyling{
 	background-color:#DECDC3;
+	border:2px solid;
+	border-radius:10px;
 	color:#206A5D;
 	font-family:Pacifico;
-	text-decoration:none;
 	font-size:25px;
-	border:2px solid;
-	padding:3px 5px;
-	border-radius:10px;
 	margin-left: 610px;
+	padding:3px 5px;
+	text-decoration:none;
 }
 
 .linkforLoginPage{
@@ -75,95 +130,17 @@ h1{
 	margin-left: 450px;
 }
 
-.form-group-email
-{
-	margin-left:500px;
-	width: 100%;
-}
-.form-group-username
-{
-	margin-left:470px;
-	width: 100%;
-}
-.form-group-phonenumber
-{
-	margin-left:440px;
-	width: 100%;
-}
-.form-group-password
-{
-	margin-left:475px;
-	width: 100%;
-}
-.form-group-repassword
-{
-	margin-left:420px;
-	width: 100%;
-}
-.CAbuttonDesign
-{
-	border-radius: 10px;
-  background-color: #FFC93C;
-  border: none;
-  color: #290001;
-  text-align: center;
-  font-size: 28px;
-  padding: 10px 1px;
-  width: 210px;
-  cursor: pointer;
-  margin-left: 620px;
-  font-family:Bangers;
-}
-.headStyling
-{
-	font-family:Bebas Neue;
-	color:#FFEFA0;
-	margin-left: 610px;
-}
-.form-group-oldpassword
-{
-	margin-left:445px;
-	width: 100%;
-}
-.form-group-newpassword
-{
-	margin-left:435px;
-	width: 100%;
-}
-.updateHeaderStyling
-{
-	font-family:Bebas Neue;
-	color:#FFEFA0;
-	margin-left: 610px;
-}
-.alertMsg
-{
+.passwordAlertMsg{
 	color:#FF0000;
-	margin-left:450px;
-}
-.signInalertMsg
-{
-	color:#FF0000;
-	margin-left:590px;
+	margin-left:150px;
 }
 
-.passwordAlertMsg
-{
-	color:#FF0000;
-	margin-left:150px;
-}
-.emailAlertMsg
-{
-	color:#FF0000;
-	margin-left:150px;
-}
-.usernameAlertMsg
-{
-	color:#FF0000;
-	margin-left:150px;
-}
-.passwordValidationStyling
-{
-	/* color:#FF0000; */
+.passwordValidationStyling{
 	margin-left:100px;
+}
+
+.usernameAlertMsg{
+	color:#FF0000;
+	font-size:25px;
+	margin-left:150px;
 }

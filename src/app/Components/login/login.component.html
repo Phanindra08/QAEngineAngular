@@ -1,6 +1,5 @@
 <div class="container">
   <h1>User Login</h1>
-  <div *ngIf="error" class="error">{{error}}</div><br />
   <form [formGroup]="loginForm" (ngSubmit)="userAuthentication()">
     <div class="form-group">
       <label for="username">* Username:</label> &nbsp; <input

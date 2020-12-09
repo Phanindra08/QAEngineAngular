@@ -1,5 +1,4 @@
 export class Questions {
-  id:number;
-  questionnaire:string;
-  username:string;
+  public id: number;
+  public questionnaire: string;
 }

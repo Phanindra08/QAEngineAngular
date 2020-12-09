@@ -1,95 +1,35 @@
+.form-group {
+	color: #FBD46D;
+	font-family: Krona One;
+	font-size: 30px;
+}
+
 .questionBodyDesigning {
 	text-align: center;
 }
 
-.questionHeadDesign {
-	font-family: Sansita Swashed;
-	font-size: 70px;
-	color: #D2E603;
-}
-
-.form-group {
-	font-family: Krona One;
-	font-size: 30px;
-	color: #FBD46D;
-}
-
 .questionButtonDesign {
-	font-family: Chilanka;
-	font-size: 25px;
-	color: #FBFD8A;
 	background-color: #184D47;
-	width: 17%;
-	height: 34px;
-	padding: 6px 6px;
 	border: 1px solid;
 	border-radius: 20px;
+	color: #FBFD8A;
+	font-family: Chilanka;
+	font-size: 25px;
+	padding: 6px 6px;
+	width: 17%;
 }
 
 .question-form-control {
-	width: 30%;
-	padding: 6px 12px;
-	font-size: 30px;
 	background-color: #DDF3F5;
 	border: 1px solid;
 	border-radius: 20px;
+	font-size: 30px;
+	padding: 6px 12px;
+	width: 30%;
 }
 
-.question-enclosing-box {
-	width: 800px;
-	border: 5px solid #FF414D;
-	background-color:#F8EFD4;
-	padding: 3px 20px 15px;
-	margin: 5px 20%;
-	border-radius:20px;
-	text-decoration:none;
-}
-
-.question-content{
-	color:#590995;
-	text-align:left;
-	font-size:25px;
-	font-family:Oswald;
-}
-
-.linkStylingforBox{
-	text-decoration:none;
-}
-
-.question-button-styling{
-	background-color:#0F3057;
-	color:#E8FFC1;
-	font-family:Bebas Neue;
-	font-size:18px;
-	border:2px solid;
-	padding:7px 10px;
-	border-radius:20px;
-	margin:5px;
-	text-decoration:none;
-}
-
-.question-editButton-styling{
-	padding:7px 15px;
-}
-
-.linkStylingforCancel{
-	font-family: Chilanka;
-	font-size: 25px;
-	color: #FBFD8A;
-	background-color: #184D47;
-	width: 17%;
-	height: 34px;
-	padding: 8px 8px 6px;
-	border: 1px solid;
-	border-radius: 20px;
-	text-decoration:none;
-}
-
-.messagetoDisplay{
-
-	color:#FBF4AD;
-	text-align:center;
-	font-size:35px;
-	font-family:Oswald;
-
+.questionHeadDesign {
+	color: #D2E603;
+	font-family: Sansita Swashed;
+	font-size: 70px;
 }

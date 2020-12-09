@@ -1,20 +1,20 @@
-import { Component, OnInit,ElementRef } from '@angular/core';
 import { Location } from '@angular/common';
+import { Component, ElementRef, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-page-not-found',
+  styleUrls: ['./page-not-found.component.css'],
   templateUrl: './page-not-found.component.html',
-  styleUrls: ['./page-not-found.component.css']
 })
 export class PageNotFoundComponent implements OnInit {
 
-  constructor(private location: Location,private elementRef:ElementRef) { }
+  constructor(private location: Location, private elementRef: ElementRef) { }
 
-  ngOnInit(): void {
-    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor="#D1C145";
+  public ngOnInit(): void {
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#D1C145';
   }
 
-  public goBack():void{
+  public goBack(): void {
     this.location.back();
   }
 

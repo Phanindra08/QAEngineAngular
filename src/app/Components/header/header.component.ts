@@ -1,23 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import {AuthorizationService} from '../../service/authorization.service';
+import {TokenStorageService} from '../../service/token-storage.service';
 
 @Component({
   selector: 'app-header',
+  styleUrls: ['./header.component.css'],
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private authorizationService:AuthorizationService,private router: Router) { }
+  constructor(private tokenStorageService: TokenStorageService, private router: Router) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
-  doLogout() {
-		this.authorizationService.logout();
-		this.router.navigate(['/login']);
-	}
-
+  public doLogout(): void {
+    this.tokenStorageService.logout();
+    this.router.navigate(['/login']);
+  }
 }

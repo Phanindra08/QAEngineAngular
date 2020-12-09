@@ -13,7 +13,7 @@
       <br /> <br />
     </div>
 
-    <input type="submit" value="Submit Answer" class="answerButtonDesign" />
+    <input type="submit" value="Submit Answer" class="answerButtonDesign" /><br /><br />
   </form>
 </div>
 
@@ -32,10 +32,9 @@
     <div class="usersRatingStyling">{{answer.rating}}</div> <br />
     <button (click)="updateAnswer()" class="answerButtonDesign">Update Answer</button>
     <button (click)="deleteAnswer(answer.id)" class="answerButtonDesign">Delete Answer</button><br /> <br />
-    <button (click)="goBack()" class="linkStylingforAnswer">Go Back</button> <br /> <br />
   </form>
 </ng-template>
-<br />
+<button (click)="goBack()" class="linkStylingforAnswer">Go Back</button> <br /> <br />
 
 <hr class="answer-page-division" />
 <br />

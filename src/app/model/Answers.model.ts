@@ -1,9 +1,9 @@
 import { Questions } from './Questions.model';
 
 export class Answers {
-  id:number;
-  answeringQuestion:string;
-  rating:string;
-  username:string;
-  questionDTO:Questions;
+  public answeringQuestion: string;
+  public id: number;
+  public questionDTO: Questions;
+  public rating: string;
+  public username: string;
 }

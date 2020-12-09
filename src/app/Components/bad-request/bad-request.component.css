@@ -4,24 +4,24 @@
 
   .linkStyling{
   	background-color:#DECDC3;
+		border:2px solid;
+		border-radius:10px;
   	color:#206A5D;
   	font-family:Pacifico;
+		font-size:25px;
+		padding:3px 5px;
   	text-decoration:none;
-  	font-size:25px;
-  	border:2px solid;
-  	padding:3px 5px;
-  	border-radius:10px;
   }
+
+	.messagetoDisplay{
+		color:#C75643;
+		font-family:Oswald;
+		font-size:50px;
+		text-align:center;
+	}
 
 .question-content{
 	color:#590995;
+	font-family:Oswald;
 	font-size:35px;
-	font-family:Oswald;
-}
-
-.messagetoDisplay{
-	color:#C75643;
-	text-align:center;
-	font-size:50px;
-	font-family:Oswald;
 }

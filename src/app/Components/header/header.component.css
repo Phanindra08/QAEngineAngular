@@ -1,41 +1,40 @@
-nav {
-	margin:-18px;
-	padding: 0;
-	background-color: #A35D6A;
-}
-
-#logo {
-	padding: 0 25px;
-	float: left;
-	font-size:30px;
-	line-height: 60px;
-  color: #A8DF65;
-  font-family:Lobster;
-}
-
-nav:after {
-	content:"";
-	display:block;
-	clear:both;
-}
-
-nav ul {
-	padding:5px;
-	font-family:Patua One;
-	list-style: none;
-}
-
 .li-position{
 	float: left;
 }
 
+.logo {
+	color: #A8DF65;
+	float: left;
+	font-family:Lobster;
+	font-size:30px;
+	line-height: 60px;
+	padding: 0 25px;
+}
+
+nav {
+	background-color: #A35D6A;
+	margin:-18px;
+	padding: 0;
+}
+
+nav:after {
+	clear:both;
+	content:"";
+	display:block;
+}
 
 nav a {
-	display:block;
-	padding:14px 20px;
-	font-size:17px;
-	text-decoration:none;
 	color:#E8EAD3;
+	display:block;
+	font-size:17px;
+	padding:14px 20px;
+	text-decoration:none;
+}
+
+nav ul {
+	font-family:Patua One;
+	list-style: none;
+	padding:5px;
 }
 
 nav ul ul li{
@@ -55,8 +54,8 @@ nav ul li:hover > ul {
 }
 
 nav ul ul li {
-	width:170px;
 	float:none;
+	width:170px;
 }
 
 nav ul a:hover{
